@@ -1,0 +1,1 @@
+A Vue.js SPA using a Pyramid application served with gunicorn wrapping a Firestore API backend

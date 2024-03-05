@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Catalog</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ "video_game_client:static/app.js"|static_url }}" defer></script>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <div id="app" class="container mx-auto">
+        <h1 class="text-blue-300">My Video Game Catalog</h1> <video-game-table :video-games="games"></video-game-table>
+
+        <h2>Add a New Game</h2>
+        <new-game-form @game-added="addGame"></new-game-form>
+    </div>
+</body>
+</html>
+</html>

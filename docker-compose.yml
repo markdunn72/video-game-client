@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  pyramid:
+    build: .
+    ports:
+      - "6543:6543"
+    volumes:
+      - .:/app
+    depends_on:
+      - firestore-emulator
+    environment:
+      - FIRESTORE_HOST=firestore-emulator:8080
+      - FIRESTORE_PROJECT_ID=video-games-api
+
+  firestore-emulator:
+    image: google/cloud-sdk:emulators
+    ports:
+      - "8080:8080"
+    command: gcloud emulators firestore start --host-port=0.0.0.0:8080

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "video-game-client"
+version = "0.1.0"
+description = ""
+authors = ["markdunn72 <markdunn2012@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyramid = "^2.0.2"
+waitress = "^3.0.0"
+pyramid-jinja2 = "^2.10.1"
+requests = "^2.31.0"
+gunicorn = "^21.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+packages = [{ include = "video_game_client"}]
+
+[tool.poetry.plugins."paste.app_factory"]
+main = "video_game_client.entrypoint:main"
